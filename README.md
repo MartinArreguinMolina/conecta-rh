@@ -124,7 +124,7 @@ verifica que no tengas ningun error
 ```
 localhost:3000/api/seed
 ```
-2. Para consumir los demas endpoints clonar el siguiente repositorio y exportar en Postman
-```
+2. Para consumir los demas endpoints debes de ir a la carpeta postman y descargar el json que viene adjunto
 
-```
+
+3. importa ese formato json en postman y prueba

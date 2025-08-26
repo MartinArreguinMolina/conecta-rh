@@ -1,0 +1,616 @@
+{
+	"info": {
+		"_postman_id": "301f4418-b960-467a-a11f-f74e35530063",
+		"name": "conecta-rh",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31907097"
+	},
+	"item": [
+		{
+			"name": "Obtener todos los clientes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFycmVjNzI4MUBnbWFpbC5jb20iLCJpZCI6IjFjZDc1YzExLTg4NDUtNDhkMy04NzA1LTAxYzkyZTljYjkwZiIsImlhdCI6MTc1NTgzODU5NCwiZXhwIjoxNzU1ODQ1Nzk0fQ._IW8xagyqIOyr6KIUZXm4L5gba2wh5R4lGU12VW65dY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/client",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un cliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFycmVjNzI4MUBnbWFpbC5jb20iLCJpZCI6IjQ4OTAxZTk1LThkZjctNDAzYy1hYTE3LWUwOTFlNDY3NjdkYiIsImlhdCI6MTc1NjE1NTg0OCwiZXhwIjoxNzU2MTYzMDQ4fQ.5z-xwYZxm-4654h-Pk99S17KcF8r3Yk4efwvOpqgun0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"fullName\": \"ulises\",\r\n \"address\": \"Calle flores magon\",\r\n \"phoneNumber\": \"4661219891\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/client",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar por id, nombre y numero de telefono",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/client/5c054601-0d56-4369-9a03-059b6ce83858",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"client",
+						"5c054601-0d56-4369-9a03-059b6ce83858"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar un cliente",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"fullName\": \"ARREGUIN MOLINA\",\r\n \"address\": \"Calle leon 305#A\",\r\n \"phoneNumber\": \"4557874548\",\r\n \"email\": \"arrec7281@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/client/698d21db-3b54-4dab-aecf-278b7121181d",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"client",
+						"698d21db-3b54-4dab-aecf-278b7121181d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un cliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFycmVjNzI4MUBnbWFpbC5jb20iLCJpZCI6IjQ4OTAxZTk1LThkZjctNDAzYy1hYTE3LWUwOTFlNDY3NjdkYiIsImlhdCI6MTc1NjE2NzA0NiwiZXhwIjoxNzU2MTc0MjQ2fQ.O_uSH4lGR58pP-13iJEBUVqMukA9UmZU28wM1gUzYnY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/client/bccd1bad-dd0c-4efd-b9c5-eae64c96b761",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"client",
+						"bccd1bad-dd0c-4efd-b9c5-eae64c96b761"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFycmVjNzI4MUBnbWFpbC5jb20iLCJpZCI6IjQ4OTAxZTk1LThkZjctNDAzYy1hYTE3LWUwOTFlNDY3NjdkYiIsImlhdCI6MTc1NjAxMTIwMiwiZXhwIjoxNzU2MDE4NDAyfQ.gffbkj-BGASGtq64bFaJXK0Bm9-ItIa6bwe_-4bwXBw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Salome Uribe\",\r\n    \"email\": \"HolaMundo@gmail.com\",\r\n    \"password\": \"db9908b54eD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/auth/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener los usuarios por nombre, email, o id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/auth/Martin ARREguin MoLiNa",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"Martin ARREguin MoLiNa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar usuarios",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/auth/48901e95-8df7-403c-aa17-e091e46767db",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"48901e95-8df7-403c-aa17-e091e46767db"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar un usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFycmVjNzI4MUBnbWFpbC5jb20iLCJpZCI6IjQ4OTAxZTk1LThkZjctNDAzYy1hYTE3LWUwOTFlNDY3NjdkYiIsImlhdCI6MTc1NjAxMTIwMiwiZXhwIjoxNzU2MDE4NDAyfQ.gffbkj-BGASGtq64bFaJXK0Bm9-ItIa6bwe_-4bwXBw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"martin molina\",\r\n    \"email\": \"otroEmail@gmail.com\",\r\n    \"rol\" : \"admin\",\r\n    \"isActive\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/auth/update/7208a40a-d2bc-4629-b8cf-d9ac346b5e4a",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"update",
+						"7208a40a-d2bc-4629-b8cf-d9ac346b5e4a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login de usuarios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"arrec7281@gmail.com\",\r\n    \"password\": \"db9908b54QWE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Llenar la base de datos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/seed",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"seed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check status del usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFycmVjNzI4MUBnbWFpbC5jb20iLCJpZCI6IjQ4OTAxZTk1LThkZjctNDAzYy1hYTE3LWUwOTFlNDY3NjdkYiIsImlhdCI6MTc1NjAxMTIwMiwiZXhwIjoxNzU2MDE4NDAyfQ.gffbkj-BGASGtq64bFaJXK0Bm9-ItIa6bwe_-4bwXBw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"arrec7281@gmail.com\",\r\n    \"password\": \"db9908b54QWE\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/auth/check-status",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"check-status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear una orden",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE0YWUwZjU0LWY5MmUtNDU4ZC04ODQ5LWQ4YmRlMDVhN2VlOCIsImlhdCI6MTc1NTM3NjcyOCwiZXhwIjoxNzU1MzgzOTI4fQ.Qtbv2qH7b0_BdSAjIh8V1M266qo9nUeLH7gyQM00bGM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"typeDevice\": \"Telefono celular\",\r\n    \"description\": \"El telefono tiene tal cosa tal cosa\",\r\n    \"clientId\": \"bccd1bad-dd0c-4efd-b9c5-eae64c96b761\",\r\n    \"userId\": \"48901e95-8df7-403c-aa17-e091e46767db\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/orden",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orden"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todas las ordenes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/orden",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orden"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener las ordenes de los clientes por id o por nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/orden/client/bccd1bad-dd0c-4efd-b9c5-eae64c96b761",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orden",
+						"client",
+						"bccd1bad-dd0c-4efd-b9c5-eae64c96b761"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todas las ordenes de un usuario por id o por nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/orden/user/Martin arreguin molina",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orden",
+						"user",
+						"Martin arreguin molina"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar una orden",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFycmVjNzI4MUBnbWFpbC5jb20iLCJpZCI6IjQ4OTAxZTk1LThkZjctNDAzYy1hYTE3LWUwOTFlNDY3NjdkYiIsImlhdCI6MTc1NjE1NTg0OCwiZXhwIjoxNzU2MTYzMDQ4fQ.5z-xwYZxm-4654h-Pk99S17KcF8r3Yk4efwvOpqgun0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": 90,\r\n    \"clientId\": \"ec90bba1-aced-4a72-9fd4-d51f2f7f3a26\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/orden/d94ef626-e7eb-4f66-82d4-49e267c673a2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orden",
+						"d94ef626-e7eb-4f66-82d4-49e267c673a2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar una orden",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/orden/3cbbb84f-9006-44ed-903c-b8cd4561654f",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orden",
+						"3cbbb84f-9006-44ed-903c-b8cd4561654f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar una orden",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/orden/3cbbb84f-9006-44ed-903c-b8cd4561654f",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orden",
+						"3cbbb84f-9006-44ed-903c-b8cd4561654f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener orden por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/orden/19a5051a-f99a-411a-bc36-8c86b9efd5ff",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orden",
+						"19a5051a-f99a-411a-bc36-8c86b9efd5ff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener orden por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/orden/19a5051a-f99a-411a-bc36-8c86b9efd5ff",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orden",
+						"19a5051a-f99a-411a-bc36-8c86b9efd5ff"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
