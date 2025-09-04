@@ -1,5 +1,5 @@
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { OrdenStatus } from "../interfaces/orden-status.interface";
+import { DeviceType, OrdenStatus } from "../interfaces/orden-status.interface";
 import { Client } from "src/client/entities/client.entity";
 import { User } from "src/auth/entities/user.entity";
 
@@ -16,8 +16,12 @@ export class Orden {
     status: OrdenStatus;
 
 
-    @Column('text')
-    deviceType: string;
+    @Column({
+        type: 'enum',
+        enum: DeviceType,
+        default: null
+    })
+    typeDevice: DeviceType;
 
 
     @Column('text')

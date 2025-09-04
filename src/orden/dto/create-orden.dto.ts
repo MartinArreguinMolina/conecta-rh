@@ -1,12 +1,12 @@
 import {IsEnum, IsNumber, IsOptional, IsString, IsUUID, Min, MinLength } from "class-validator";
-import { OrdenStatus } from "../interfaces/orden-status.interface";
+import { DeviceType, OrdenStatus } from "../interfaces/orden-status.interface";
 
 export class CreateOrdenDto {
 
     @IsString()
     @IsEnum(OrdenStatus)
     @IsOptional()
-    ordenStatus?: OrdenStatus;
+    status?: OrdenStatus;
 
     @IsOptional()
     @Min(0)
@@ -14,8 +14,8 @@ export class CreateOrdenDto {
     price?: number;
     
     @IsString()
-    @MinLength(1)
-    typeDevice: string;
+    @IsEnum(DeviceType)
+    typeDevice: DeviceType;
 
     @IsString()
     @MinLength(1)

@@ -35,9 +35,9 @@ export class OrdenService {
         client,
         user,
         description: createOrdenDto.description,
-        status: createOrdenDto.ordenStatus,
+        status: createOrdenDto.status,
         price: createOrdenDto.price,
-        deviceType: createOrdenDto.typeDevice,
+        typeDevice: createOrdenDto.typeDevice,
       })
 
       return await this.ordenRepository.save(orden);
@@ -114,8 +114,7 @@ export class OrdenService {
       throw new NotFoundException('La orden no fue encontrada');
 
     try {
-      await this.ordenRepository.save(orden)
-      return orden;
+      return await this.ordenRepository.save(orden)
     } catch (error) {
       HandleErrors.handleDBErrors(error)
     }
