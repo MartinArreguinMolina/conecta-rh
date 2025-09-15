@@ -1,6 +1,7 @@
-import { BeforeInsert, BeforeUpdate, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, BeforeUpdate, Column, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Roles } from "../interfaces/roles.interface";
 import { Orden } from "src/orden/entities/orden.entity";
+import { UserImage } from "src/files/entities/file.entity";
 
 @Entity()
 export class User {
@@ -32,12 +33,19 @@ export class User {
     })
     isActive: boolean;
 
-
     @OneToMany(
         () => Orden,
         (orden) => orden.user
     )
     orden: Orden;
+
+
+    @OneToOne(
+        () => UserImage,
+        (image) => image.user,
+        {cascade: true, eager: true}
+    )
+    image: UserImage;
 
     @BeforeUpdate()
     beforeUpdateFullName(){

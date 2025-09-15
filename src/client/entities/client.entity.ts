@@ -1,5 +1,5 @@
 import { Orden } from "src/orden/entities/orden.entity";
-import { AfterInsert, AfterUpdate, BeforeInsert, BeforeUpdate, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, BeforeUpdate, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({name: 'client'})
 export class Client {
@@ -8,7 +8,6 @@ export class Client {
     id: string
 
     @Column('text', {
-        unique: true
     })
     fullName: string;
 
@@ -19,11 +18,9 @@ export class Client {
     phoneNumber: string
 
     @Column('text', {
-        unique: true,
         nullable: true
     })
     email: string;
-
 
     @OneToMany(
         () => Orden,

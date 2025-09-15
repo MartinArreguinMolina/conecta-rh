@@ -39,7 +39,7 @@ export class AuthController {
 
   @Get(':term')
   findOne(@Param('term') term: string) {
-    return this.authService.findOne(term);
+    return this.authService.planeUserReponse(term);
   }
 
   // Solo los roles de superAdmin pueden actualizar usuarios
@@ -52,7 +52,7 @@ export class AuthController {
   // Solo los rolos de superAdmin pueden eliminar usuarios
   @Delete(':id')
   @Auth(Roles.superAdmin)
-  remove(@Param('id') id: string) {
+  remove(@Param('id', ParseUUIDPipe) id: string) {
     return this.authService.remove(id);
   }
 }

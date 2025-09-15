@@ -3,7 +3,6 @@ import { ClientService } from './client.service';
 import { CreateClientDto } from './dto/create-client.dto';
 import { UpdateClientDto } from './dto/update-client.dto';
 import { Auth } from 'src/auth/decorators/auth-decorator';
-import { Roles } from 'src/auth/interfaces/roles.interface';
 
 @Controller('client')
 export class ClientController {

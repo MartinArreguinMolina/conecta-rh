@@ -16,7 +16,7 @@ export class CreateUserDto {
     @MaxLength(50)
     @Matches(
         /(?:(?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, {
-        message: 'The password must have a Uppercase, lowercase letter and a number'
+        message: 'La contraseña debe tener una letra mayúscula, una minúscula y un número.'
     })
     password: string;
 
@@ -26,8 +26,10 @@ export class CreateUserDto {
     @IsOptional()
     rol?: Roles;
 
-
     @IsOptional()
     @IsBoolean()
     isActive?: boolean;
+
+    @IsString()
+    userImage: string
 }

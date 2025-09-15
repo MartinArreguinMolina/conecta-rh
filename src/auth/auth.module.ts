@@ -7,11 +7,14 @@ import { PassportModule, PassportStrategy } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtStrategy } from './strategies/jwt.strategy';
+import { FilesModule } from 'src/files/files.module';
 
 @Module({
   controllers: [AuthController],
   providers: [AuthService, JwtStrategy],
   imports: [
+    FilesModule,
+
     ConfigModule,
 
     TypeOrmModule.forFeature([User]),

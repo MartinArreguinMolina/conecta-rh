@@ -27,6 +27,7 @@ export class JwtStrategy extends PassportStrategy(Strategy){
         let user : User | null = null;
 
         const queryBuilder = this.userRepository.createQueryBuilder('user')
+        .leftJoinAndSelect('user.image', 'image')
         user = await queryBuilder.where('user.id=:id or user.email=:email',{
             id,
             email
@@ -38,6 +39,7 @@ export class JwtStrategy extends PassportStrategy(Strategy){
         if(!user.isActive)
             throw new UnauthorizedException('El usuario esta inactivo hable con el administrador')
 
+        
         return user;
     }
 

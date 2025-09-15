@@ -3,12 +3,15 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'src/auth/entities/user.entity';
 import { Repository } from 'typeorm';
 import { Seed } from './data/data.seed';
+import { UserImage } from 'src/files/entities/file.entity';
 
 @Injectable()
 export class SeedService {
 
   constructor(
-
+    @InjectRepository(UserImage)
+    private readonly userImageRepository: Repository<UserImage>,
+  
     @InjectRepository(User)
     private readonly userRepository: Repository<User>
   ){}
@@ -31,7 +34,7 @@ export class SeedService {
     const users: User[] = [];
 
     seedUsers.forEach(user => {
-      users.push(this.userRepository.create(user))
+      users.push(this.userRepository.create({...user, image: this.userImageRepository.create({image: user.userImage})}))
     })
 
     await this.userRepository.save(users)

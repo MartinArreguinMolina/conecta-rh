@@ -33,6 +33,5 @@ export class UserRoleGuard implements CanActivate {
       `Usuario con el nombre ${user.fullName} necesita un rol valido ${validRoles}`
     )
 
-
   }
 }

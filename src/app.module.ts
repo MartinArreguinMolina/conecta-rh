@@ -6,6 +6,7 @@ import { AuthModule } from './auth/auth.module';
 import { SeedModule } from './seed/seed.module';
 import { OrdenModule } from './orden/orden.module';
 import { CommonModule } from './common/common.module';
+import { FilesModule } from './files/files.module';
 
 @Module({
   imports: [
@@ -31,7 +32,9 @@ import { CommonModule } from './common/common.module';
 
     OrdenModule,
 
-    CommonModule
+    CommonModule,
+
+    FilesModule
   ],
   controllers: [],
   providers: [],
